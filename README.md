@@ -119,7 +119,7 @@ Add the following to your pom:
 </project>
 ```
 And create the suppression configuration file under `/src/test/spotbugs/spotbugs-exclude.xml` with the contents of your
-choosing based on the following example:
+choice based on the following example:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
