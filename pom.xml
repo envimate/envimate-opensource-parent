@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -112,9 +112,11 @@
                     <version>3.8.0</version>
                     <configuration>
                         <compilerArgs>
-                            <arg>-parameters</arg>
-                            <arg>-Werror</arg>
                             <arg>-Xlint:all</arg>
+                            <arg>-Xlint:-processing</arg>
+                            <arg>-Xlint:-serial</arg>
+                            <arg>-Werror</arg>
+                            <arg>-parameters</arg>
                         </compilerArgs>
                     </configuration>
                 </plugin>
