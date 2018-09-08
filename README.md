@@ -36,14 +36,18 @@ Replace the top section of your pom with the following:
     <parent>
         <groupId>com.envimate</groupId>
         <artifactId>envimate-opensource-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 ```
 
+Also make sure that the `README.md` of the project clearly recommends the usage of the `pgpverify-maven-plugin` by
+providing the link https://youtu.be/ES9hWkn_WBA?t=27m29s . It can be found under 
+https://www.simplify4u.org/pgpverify-maven-plugin/ usage instructions. 
+ 
 ##Checkstyle
 Checkstyle is enabled after using this pom as parent in a maven project and executed before tests are run.
 
-###Registering checkstyle suppressions
+###Registering Checkstyle suppressions
 Add the following to your pom:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -100,7 +104,10 @@ Install the CheckStyle-IDEA plugin. Afterwards, open Settings -> Other Settings 
 configuration file, name it EnvimateOpenSource and use 
 `https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/checkstyle.xml` as a URL location.
 
-##Registering spotbugs exclusions
+##Spotbugs
+Spotbugs is enabled after using this pom as parent in a maven project and executed before tests are run.
+
+###Registering Spotbugs exclusions
 Add the following to your pom:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -149,6 +156,9 @@ choice based on the following example:
 		xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 https://raw.githubusercontent.com/spotbugs/spotbugs/3.1.0/spotbugs/etc/findbugsfilter.xsd">
 </FindBugsFilter>
 ```
+###Intellij integration
+Install the Findbugs-IDEA plugin.
+
 ##Skipping tests
 Just run the maven command with `-DskipTests=true`.
 

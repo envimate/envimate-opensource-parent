@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -107,11 +107,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.simplify4u.plugins</groupId>
-                    <artifactId>pgpverify-maven-plugin</artifactId>
-                    <version>1.2.0</version>
-                </plugin>
-                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
@@ -122,6 +117,11 @@
                             <arg>-Xlint:all</arg>
                         </compilerArgs>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.simplify4u.plugins</groupId>
+                    <artifactId>pgpverify-maven-plugin</artifactId>
+                    <version>1.2.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
