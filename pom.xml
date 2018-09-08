@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -131,6 +131,9 @@
     <profiles>
         <profile>
             <id>deployToMavenCentral</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
             <distributionManagement>
                 <repository>
                     <uniqueVersion>false</uniqueVersion>
