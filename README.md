@@ -36,7 +36,7 @@ Replace the top section of your pom with the following:
     <parent>
         <groupId>com.envimate</groupId>
         <artifactId>envimate-opensource-parent</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.41</version>
     </parent>
 ```
 
