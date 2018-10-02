@@ -36,7 +36,7 @@ Replace the top section of your pom with the following:
     <parent>
         <groupId>com.envimate</groupId>
         <artifactId>envimate-opensource-parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.4</version>
     </parent>
 ```
 
@@ -193,5 +193,46 @@ mvn clean verify
 ```
 * run the following command to release the project in case the tests passed:
 ```bash
-mvn -P deployToMavenCentral -DskipTests=true clean deploy
+mvn -DdeployToMavenCentral -DskipTests=true clean deploy
+```
+
+##Excluding modules from being released to maven central
+Sometimes a project needs a [test]module, that is not supposed to be released as an artifact to maven central. This is
+a tough nut, since the nexus staging plugin will only deploy to staging, if the last module of a multi modules build,
+is actually one that is supposed to be released. Especially test modules tend to be the last ones built and are not
+to be deployed, so disabling the staging plugin in these modules will essentially end up in the whole project not being
+released to staging. In these cases 2 profiles will do the trick. One that is called `development`, which includes 
+ALL the modules and is activated on the missing property named `deployToMavenCentral`. 
+The other profile is called `deployToMavenCentral`, contains only the modules that are intended to be released to
+maven central and is activated on the presence of the property named `deployToMavenCentral`. Example:
+```xml
+<profiles>
+    <profile>
+        <id>development</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+            <property>
+                <name>!deployToMavenCentral</name>
+            </property>
+        </activation>
+        <modules>
+            <module>core</module>
+            <module>integrations</module>
+            <module>tests</module>
+        </modules>
+    </profile>
+    <profile>
+        <id>deployToMavenCentral</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+            <property>
+                <name>deployToMavenCentral</name>
+            </property>
+        </activation>
+        <modules>
+            <module>core</module>
+            <module>integrations</module>
+        </modules>
+    </profile>
+</profiles>
 ```
