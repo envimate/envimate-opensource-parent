@@ -257,7 +257,6 @@
             <property name="ignoreFinal" value="false" />
             <property name="allowedAbbreviationLength" value="3" />
         </module>
-        <module name="AbstractClassName" />
         <module name="CatchParameterName" />
         <module name="ClassTypeParameterName" />
         <module name="ConstantName" />
