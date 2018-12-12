@@ -99,6 +99,9 @@ contents of your choosing based on the following example:
     <suppress checks="IllegalCatchCheck" files="Deserializer.java" />
 </suppressions>
 ```
+
+The checkstyle step can be skipped for a run with `-Dcheckstyle.skip`
+
 ###Intellij integration
 Install the CheckStyle-IDEA plugin. Afterwards, open Settings -> Other Settings -> Checkstyle and add a new Checkstyle
 configuration file, name it EnvimateOpenSource and use 
