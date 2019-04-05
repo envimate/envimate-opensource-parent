@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -40,7 +40,7 @@
     </organization>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>12</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
