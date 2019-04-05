@@ -89,6 +89,25 @@
                 <groupId>org.simplify4u.plugins</groupId>
                 <artifactId>pgpverify-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.6</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -109,7 +128,7 @@
                 <plugin>
                     <groupId>org.simplify4u.plugins</groupId>
                     <artifactId>pgpverify-maven-plugin</artifactId>
-                    <version>1.2.0</version>
+                    <version>1.4.0</version>
                     <executions>
                         <execution>
                             <goals>
@@ -117,6 +136,11 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.0.0-M2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -150,7 +174,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>3.0.1</version>
+                            <version>3.1.0</version>
                             <executions>
                                 <execution>
                                     <id>attach-javadocs</id>
@@ -233,7 +257,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-plugin</artifactId>
-                            <version>2.19.1</version>
+                            <version>3.0.0-M3</version>
                             <configuration>
                                 <trimStackTrace>false</trimStackTrace>
                                 <includes>
@@ -261,7 +285,7 @@
                         <plugin>
                             <groupId>com.github.spotbugs</groupId>
                             <artifactId>spotbugs-maven-plugin</artifactId>
-                            <version>3.1.6</version>
+                            <version>3.1.11</version>
                             <executions>
                                 <execution>
                                     <phase>test</phase>
