@@ -36,7 +36,7 @@ Replace the top section of your pom with the following:
     <parent>
         <groupId>com.envimate</groupId>
         <artifactId>envimate-opensource-parent</artifactId>
-        <version>1.0.41</version>
+        <version>1.0.11</version>
     </parent>
 ```
 
@@ -175,6 +175,19 @@ More information about exclusions can be found on the spotbugs website: https://
 
 ###Intellij integration
 Install the Findbugs-IDEA plugin.
+
+##Compiler
+The compiler is configured for all child projects and should not be modified in any of the child projects of this pom.
+Following this recommendation provides child projects with the following benefits:
+- Encoding and Java version of the sources and compiled classes are managed
+- A configuration bug fix, that will prevent the maven-compiler-plugin from swallowing compilation errors and hence 
+  failing with 'unknown compilation error'
+- Building the child project in Intellij will be possible with warnings
+- Building the child project using maven will be possible with warnings, if built with `-DskipTests=true` 
+- Testing the child project using maven will be possible with warnings, if built with 
+  `-Dmaven.compiler.failOnWarning=false` 
+- Building/Testing the child project will fail, if the source code is causing compiler warnings
+- Releasing the child project will fail, if the source code is causing compiler warnings
 
 ##Skipping tests
 Just run the maven command with `-DskipTests=true`.
