@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.10</version>
+    <version>1.0.11</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -41,15 +41,13 @@
 
     <properties>
         <java.version>12</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>http://www.apache.org/licenses/LICmaven-compiler-pluginENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -116,12 +114,18 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
                     <configuration>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+                        <failOnError>true</failOnError>
+                        <release>${java.version}</release>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <debug>true</debug>
+                        <parameters>true</parameters>
                         <compilerArgs>
                             <arg>-Xlint:all</arg>
                             <arg>-Xlint:-processing</arg>
                             <arg>-Xlint:-serial</arg>
-                            <arg>-Werror</arg>
-                            <arg>-parameters</arg>
                         </compilerArgs>
                     </configuration>
                 </plugin>
@@ -154,6 +158,9 @@
                     <name>deployToMavenCentral</name>
                 </property>
             </activation>
+            <properties>
+                    <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
+            </properties>
             <build>
                 <pluginManagement>
                     <plugins>
@@ -245,6 +252,9 @@
                     <value>!true</value>
                 </property>
             </activation>
+            <properties>
+                <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
