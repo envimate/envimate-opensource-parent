@@ -4,7 +4,7 @@
 
 Contains the java quality standards for envimate projects
 
-##Usage
+## Usage
 Replace the top section of your pom with the following:
 ```xml
 <!--
@@ -44,10 +44,10 @@ Also make sure that the `README.md` of the project clearly recommends the usage 
 providing the link https://youtu.be/ES9hWkn_WBA?t=27m29s . It can be found under 
 https://www.simplify4u.org/pgpverify-maven-plugin/ usage instructions. 
  
-##Checkstyle
+## Checkstyle
 Checkstyle is enabled after using this pom as parent in a maven project and executed before tests are run.
 
-###Registering Checkstyle suppressions
+### Registering Checkstyle suppressions
 Add the following to your pom:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -102,15 +102,15 @@ contents of your choosing based on the following example:
 
 The checkstyle step can be skipped for a run with `-Dcheckstyle.skip`
 
-###Intellij integration
+### Intellij integration
 Install the CheckStyle-IDEA plugin. Afterwards, open Settings -> Other Settings -> Checkstyle and add a new Checkstyle
 configuration file, name it EnvimateOpenSource and use 
 `https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/checkstyle.xml` as a URL location.
 
-##Spotbugs
+## Spotbugs
 Spotbugs is enabled after using this pom as parent in a maven project and executed before tests are run.
 
-###Registering Spotbugs exclusions
+### Registering Spotbugs exclusions
 Add the following to your pom:
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -173,10 +173,10 @@ choice based on the following example:
 
 More information about exclusions can be found on the spotbugs website: https://spotbugs.readthedocs.io/en/stable/filter.html#examples
 
-###Intellij integration
+### Intellij integration
 Install the Findbugs-IDEA plugin.
 
-##Compiler
+## Compiler
 The compiler is configured for all child projects and should not be modified in any of the child projects of this pom.
 Following this recommendation provides child projects with the following benefits:
 - Encoding and Java version of the sources and compiled classes are managed
@@ -189,10 +189,10 @@ Following this recommendation provides child projects with the following benefit
 - Building/Testing the child project will fail, if the source code is causing compiler warnings
 - Releasing the child project will fail, if the source code is causing compiler warnings
 
-##Skipping tests
+## Skipping tests
 Just run the maven command with `-DskipTests=true`.
 
-##Releasing a version to maven central
+## Releasing a version to maven central
 The problem with releasing to maven central using a CI/CD pipeline is complicated, since both, the nexus staging account
 and the gpg key must be kept private. If a very bad person gains access to one or both of these credentials users of
 our open source products are in grave danger (https://youtu.be/ES9hWkn_WBA?t=27m29s). A bitbucket pipeline can output 
@@ -226,7 +226,7 @@ mvn clean verify
 mvn -DdeployToMavenCentral -DskipTests=true clean deploy
 ```
 
-##Excluding modules from being released to maven central
+## Excluding modules from being released to maven central
 Sometimes a project needs a [test]module, that is not supposed to be released as an artifact to maven central. This is
 a tough nut, since the nexus staging plugin will only deploy to staging, if the last module of a multi modules build,
 is actually one that is supposed to be released. Especially test modules tend to be the last ones built and are not
