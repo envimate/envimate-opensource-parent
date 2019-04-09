@@ -105,7 +105,7 @@ The checkstyle step can be skipped for a run with `-Dcheckstyle.skip`
 ### Intellij integration
 Install the CheckStyle-IDEA plugin. Afterwards, open Settings -> Other Settings -> Checkstyle and add a new Checkstyle
 configuration file, name it EnvimateOpenSource and use 
-`https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/checkstyle.xml` as a URL location.
+`https://raw.githubusercontent.com/envimate/envimate-opensource-parent/master/checkstyle/checkstyle.xml` as a URL location.
 
 ## Spotbugs
 Spotbugs is enabled after using this pom as parent in a maven project and executed before tests are run.

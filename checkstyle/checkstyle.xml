@@ -43,17 +43,17 @@
 
     <!-- Headers -->
     <module name="Header">
-        <property name="headerFile" value="https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/copyright-header-java.txt" />
+        <property name="headerFile" value="https://raw.githubusercontent.com/envimate/envimate-opensource-parent/master/checkstyle/copyright-header-java.txt" />
         <property name="fileExtensions" value="java" />
         <property name="id" value="header_java" />
     </module>
     <module name="Header">
-        <property name="headerFile" value="https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/copyright-header-properties.txt" />
+        <property name="headerFile" value="https://raw.githubusercontent.com/envimate/envimate-opensource-parent/master/checkstyle/copyright-header-properties.txt" />
         <property name="fileExtensions" value="properties" />
         <property name="id" value="header_properties" />
     </module>
     <module name="Header">
-        <property name="headerFile" value="https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/copyright-header-xml.txt" />
+        <property name="headerFile" value="https://raw.githubusercontent.com/envimate/envimate-opensource-parent/master/checkstyle/copyright-header-xml.txt" />
         <property name="fileExtensions" value="xml" />
         <property name="id" value="header_xml" />
     </module>

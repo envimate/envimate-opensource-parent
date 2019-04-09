@@ -26,13 +26,13 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.14</version>
+    <version>1.0.15</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
         the enforcement of java standards like library blacklisting, code style rules, and more.
     </description>
-    <url>https://bitbucket.org/envimate/envimate-opensource-parent</url>
+    <url>https://github.com/envimate/envimate-opensource-parent</url>
 
     <organization>
         <name>envimate GmbH</name>
@@ -64,9 +64,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://bitbucket.org/envimate/envimate-opensource-parent.git</connection>
-        <developerConnection>scm:git:git://bitbucket.org/envimate/envimate-opensource-parent.git</developerConnection>
-        <url>https://bitbucket.org/envimate/envimate-opensource-parent/src</url>
+        <url>https://github.com/envimate/envimate-opensource-parent</url>
+        <connection>scm:git:git://github.com/envimate/envimate-opensource-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:envimate/envimate-opensource-parent.git</developerConnection>
     </scm>
 
     <distributionManagement>
@@ -344,7 +344,7 @@
                                     <phase>process-test-classes</phase>
                                     <configuration>
                                         <configLocation>
-                                            https://bitbucket.org/envimate/envimate-opensource-parent/raw/master/checkstyle/checkstyle.xml
+                                            https://raw.githubusercontent.com/envimate/envimate-opensource-parent/master/checkstyle/checkstyle.xml
                                         </configLocation>
                                         <encoding>UTF-8</encoding>
                                         <consoleOutput>true</consoleOutput>
