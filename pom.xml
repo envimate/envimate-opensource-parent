@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.15</version>
+    <version>1.0.17</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -379,4 +379,3 @@
         </profile>
     </profiles>
 </project>
-
