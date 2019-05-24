@@ -26,7 +26,7 @@
     <packaging>pom</packaging>
     <groupId>com.envimate</groupId>
     <artifactId>envimate-opensource-parent</artifactId>
-    <version>1.0.18</version>
+    <version>1.0.19</version>
     <name>Envimate OpenSource java standards</name>
     <description>
         This parent pom is supposed to be used as a parent for all envimate open source projects to reliably enable
@@ -107,7 +107,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>3.8.1</version>
                     <configuration>
                         <showWarnings>true</showWarnings>
                         <showDeprecation>true</showDeprecation>
@@ -127,7 +127,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.1.0</version>
                     <executions>
                         <execution>
                             <id>attach-sources</id>
@@ -320,19 +320,19 @@
                                 <dependency>
                                     <groupId>com.github.spotbugs</groupId>
                                     <artifactId>spotbugs</artifactId>
-                                    <version>4.0.0-beta1</version>
+                                    <version>4.0.0-beta2</version>
                                 </dependency>
                             </dependencies>
                         </plugin>
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-checkstyle-plugin</artifactId>
-                            <version>3.0.0</version>
+                            <version>3.1.0</version>
                             <dependencies>
                                 <dependency>
                                     <groupId>com.puppycrawl.tools</groupId>
                                     <artifactId>checkstyle</artifactId>
-                                    <version>8.19</version>
+                                    <version>8.20</version>
                                 </dependency>
                             </dependencies>
                             <executions>
