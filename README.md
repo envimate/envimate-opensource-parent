@@ -192,6 +192,19 @@ Following this recommendation provides child projects with the following benefit
 ## Skipping tests
 Just run the maven command with `-DskipTests=true`.
 
+## Long running tests, that should be executed before every release, but not on every verify
+Surefire will set a SystemProperty `testMode` to either `NORMAL` or `RELEASE` depending on the active profile.
+
+In the test, an if statement can be used:
+```java
+final Boolean runThisTest = Optional.ofNullable(System.getProperty("testMode")).map(s -> s.equals("RELEASE")).orElse(false);
+if (runThisTest) {
+    //test you long running stuff
+} else {
+    System.out.println("Skipping this test, since system property testMode is not set to RELEASE");
+}
+```
+
 ## Releasing a version to maven central
 The problem with releasing to maven central using a CI/CD pipeline is complicated, since both, the nexus staging account
 and the gpg key must be kept private. If a very bad person gains access to one or both of these credentials users of
